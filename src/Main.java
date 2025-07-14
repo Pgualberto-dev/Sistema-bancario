@@ -8,27 +8,27 @@ public class Main {
 //Variaveis de validação guys
         String nome ;
         String senha ;
-//login
-     for (int tentativa = 0;tentativa<=3; tentativa++) {
+        //login
+     for (int tentativa = 0; tentativa <= 3; tentativa++ ) {
 
          System.out.println("Usuario: ");
          nome = sc.next();
          System.out.println("Senha: ");
          senha = sc.next();
 
-         if (!nome.equals("adim") || !senha.equals("1319")) {
+         if (nome.equals("adim") && senha.equals("1319")) {
+             break;
+
+         } else {
 
              System.out.println("Usuario ou senha incorretos!");
              System.out.println("TENTE NOVAMENTE");
              System.out.println("tentativa " + tentativa + " de 3");
-         } else {
-
-             System.out.println("LOGIN BEM SUCEDIDO");
-             System.out.println("   Bem-Vindo   ");
-             break;
          }
+     }
 
          int opcao;
+
          do {
 
              try {
@@ -98,4 +98,4 @@ public class Main {
 
      }
     }
-}
+
