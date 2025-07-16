@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        double saldo = 2000;
 //Variaveis de validação guys
         String nome ;
         String senha ;
@@ -16,7 +17,7 @@ public class Main {
          System.out.println("Senha: ");
          senha = sc.next();
 
-         if (nome.equals("adim") && senha.equals("1319")) {
+         if (nome.equals("hanna") && senha.equals("1319")) {
              break;
 
          } else {
@@ -56,32 +57,33 @@ public class Main {
 
                  case 1:
                      System.out.println("SALDO");
-                     System.out.println(" R$ 2,000");
+                     System.out.println(saldo);
                      break;
                  case 2:
                      System.out.println(" Deposito ");
                      System.out.println("Digite um valor");
                      double valorDesposito = sc.nextDouble();
-                     System.out.println("Valor depositado R$" + valorDesposito);
+                     saldo += valorDesposito;
+                     System.out.println("Valor depositado R$" + valorDesposito + "Saldo atual de R$ " + saldo);
                      break;
                  case 3:
                      for (int saque = 0;saque <=3; saque++) {
                          System.out.println("     SACAR     ");
                          System.out.println("Digite um valor");
                          double valorSaque = sc.nextDouble();
-                         double saldoAtual = 2000;
-                         if (valorSaque <= 0 || valorSaque > saldoAtual) {
+                         if (valorSaque <= 0 || valorSaque > saldo) {
                              System.out.println("Impossibilitado de executar");
                          } else {
+                             saldo -= valorSaque ;
                              System.out.println("SAQUE");
-                             System.out.println("Valor do saque R$" + valorSaque);
+                             System.out.println("Valor do saque R$" + valorSaque + "Saldo atual R$ "+ saldo);
                              break;
                          }
                      }
                      break;
 
                  case 4:
-                     System.out.println("OBROGADO PELA SUA CONFIANÇA");
+                     System.out.println("OBRIGADO PELA SUA CONFIANÇA");
                      System.out.println("         saindo            ");
 
 
